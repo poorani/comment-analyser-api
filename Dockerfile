@@ -1,4 +1,4 @@
-FROM openjdk:17-jre-alpine
+FROM openjdk:17-oracle
 
 EXPOSE 8080
 
