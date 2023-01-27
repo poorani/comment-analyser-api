@@ -37,9 +37,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
- 
-    - uses: mr-smithers-excellent/docker-build-push@v5
+        
     - name: Build & push Docker image
+    - uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: neonstash/comment-analyser
         tags: v1, latest
