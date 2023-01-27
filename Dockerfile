@@ -1,7 +1,8 @@
-FROM openjdk:8-jdk-slim as builder
-#WORKDIR build
+FROM openjdk:8-jre-alpine
+
 EXPOSE 8080
-RUN mkdir target
-ARG JAR_FILE=./target/*.jar
-COPY ${JAR_FILE} target/app.jar
-ENTRYPOINT ["java","-jar","/target/app.jar"]
+
+COPY ./build/libs/my-app-1.0-SNAPSHOT.jar /usr/app/
+WORKDIR /usr/app
+
+ENTRYPOINT ["java", "-jar", "my-app-1.0-SNAPSHOT.jar"]
